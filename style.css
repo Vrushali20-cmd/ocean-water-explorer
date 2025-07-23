@@ -1,0 +1,316 @@
+/* 🌊 GENERAL STYLES */
+body {
+  background-color: #001f3f;
+  background-image: url("assets/images/ocean-bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🦑 HERO SECTION */
+.hero {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 4rem 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.hero p, .hero-facts p {
+  font-size: 1.1rem;
+  color: #d4d4d4;
+}
+
+/* 🎧 SOUND CARDS */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #001f3f;
+}
+
+.play-btn {
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+/* 📱 MOBILE FIXES */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+
+/* 🦕 EXTINCT ANIMALS SECTION */
+#extinct-animals h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 0.5rem;
+}
+
+/* 🌀 Flip Card Container */
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+  height: 280px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 👀 Front and Back Faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.flip-card-front {
+  z-index: 2;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.flip-card-front h5 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00d4ff;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .flip-card {
+    height: 260px;
+  }
+
+  .flip-card-front img {
+    height: 140px;
+  }
+
+  .flip-card-front h5 {
+    font-size: 1rem;
+  }
+
+  #extinct-animals h2 {
+    font-size: 2rem;
+  }
+}
+
+
+/* 🌐 Ocean Facts Tile Section */
+#ocean-facts h2 {
+  font-size: 2.3rem;
+  color: #fff;
+  border-bottom: 2px solid #00c8ff;
+  padding-bottom: 0.5rem;
+}
+
+.fact-tile {
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.2rem;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.fact-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.fact-tile h5 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #00e1ff;
+}
+
+.fact-tile p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsive fix */
+@media (max-width: 768px) {
+  .fact-tile h5 {
+    font-size: 1.1rem;
+  }
+
+  .fact-tile p {
+    font-size: 0.9rem;
+  }
+}
+
+/* 🫧 BUBBLE ANIMATION */
+.bubble-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rise 10s infinite ease-in;
+}
+
+.bubble1 {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-duration: 12s;
+}
+
+.bubble2 {
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.bubble3 {
+  width: 25px;
+  height: 25px;
+  left: 60%;
+  animation-duration: 14s;
+  animation-delay: 4s;
+}
+
+.bubble4 {
+  width: 18px;
+  height: 18px;
+  left: 80%;
+  animation-duration: 11s;
+  animation-delay: 1s;
+}
+
+.bubble5 {
+  width: 22px;
+  height: 22px;
+  left: 50%;
+  animation-duration: 13s;
+  animation-delay: 3s;
+}
+
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer a {
+  color: #00cfff;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
+
+body::after {
+  content: "";
+  display: block;
+  height: 2000px; /* Adds extra height */
+}
