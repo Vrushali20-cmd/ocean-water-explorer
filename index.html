@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ocean Sound Explorer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap Icons CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- 🌊 HERO SECTION -->
+<section class="hero d-flex flex-column justify-content-center align-items-center text-center">
+  <div class="hero-overlay">
+    <h1 class="display-4 fw-bold">🌊 Explore the Secrets of the Deep</h1>
+    <p class="lead">Dive into the mysterious sounds of marine life</p>
+
+    <div class="hero-facts mt-4">
+      <p>🐋 Whales can communicate across thousands of miles!</p>
+      <p>🐬 Dolphins use sonar to navigate and chat with friends</p>
+      <p>🪸 Coral reefs produce tiny crackling underwater sounds</p>
+    </div>
+
+    <a href="#sound-section" class="btn btn-light btn-lg mt-4">Explore Now ↓</a>
+  </div>
+</section>
+
+<!-- 🔽 DROPDOWN SELECTOR -->
+<section class="container text-center my-5" id="sound-section">
+  <h2 class="text-white mb-4">Choose an Animal to Learn & Listen</h2>
+  <div class="d-flex justify-content-center gap-3 flex-wrap">
+    <select id="soundSelector" class="form-select w-auto">
+      <option value="">-- Select an animal --</option>
+      <option value="whale">🐋 Whale</option>
+      <option value="dolphin">🐬 Dolphin</option>
+      <option value="coral">🪸 Coral Reef</option>
+      <option value="submarine">🚢 Submarine</option>
+      <option value="shark">🦈 Shark</option>
+      <option value="jellyfish">🪼 Jellyfish</option>
+      <option value="ship">⛵ Ship</option>
+      <option value="tortoise">🐢 Tortoise</option>
+    </select>
+    <button id="playSelectedSound" class="btn btn-success">Play Sound</button>
+  </div>
+</section>
+
+<!-- 🎧 SOUND CARDS -->
+<section class="container my-5" id="cards-section">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Card Template: Repeat for each animal -->
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 text-center">
+        <img src="assets/images/ocean-bg.jpeg" class="card-img-top" alt="Whale">
+        <div class="card-body">
+          <h5 class="card-title">Whale</h5>
+          <p class="card-text">Whales communicate with deep, melodic songs across vast ocean ranges.</p>
+          <button class="btn btn-primary play-btn" data-sound="whale">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 text-center">
+        <img src="assets/images/dolphiin.jpg" class="card-img-top" alt="Dolphin">
+        <div class="card-body">
+          <h5 class="card-title">Dolphin</h5>
+          <p class="card-text">Dolphins use high-pitched clicks and whistles to navigate and socialize.</p>
+          <button class="btn btn-primary play-btn" data-sound="dolphin">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 text-center">
+        <img src="assets/images/coral reef.jpg" class="card-img-top" alt="Coral Reef">
+        <div class="card-body">
+          <h5 class="card-title">Coral Reef</h5>
+          <p class="card-text">Coral reefs buzz with life — producing gentle crackling sounds underwater.</p>
+          <button class="btn btn-primary play-btn" data-sound="coral">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 text-center">
+        <img src="assets/images/submarine.jpg" class="card-img-top" alt="Submarine">
+        <div class="card-body">
+          <h5 class="card-title">Submarine</h5>
+          <p class="card-text">Submarines explore the ocean using echoing sonar pings and soft hums.</p>
+          <button class="btn btn-primary play-btn" data-sound="submarine">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 text-center">
+        <img src="assets/images/shark.jpg" class="card-img-top" alt="Shark">
+        <div class="card-body">
+          <h5 class="card-title">Shark</h5>
+          <p class="card-text">Sharks move silently through the deep — the kings of ocean stealth.</p>
+          <button class="btn btn-primary play-btn" data-sound="shark">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 text-center">
+        <img src="assets/images/jellyfish.jpeg" class="card-img-top" alt="Jellyfish">
+        <div class="card-body">
+          <h5 class="card-title">Jellyfish</h5>
+          <p class="card-text">Jellyfish drift with the tides, glowing and pulsing gently in the dark.</p>
+          <button class="btn btn-primary play-btn" data-sound="jellyfish">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 text-center">
+        <img src="assets/images/ship.jpeg" class="card-img-top" alt="Ship">
+        <div class="card-body">
+          <h5 class="card-title">Ship</h5>
+          <p class="card-text">Old wooden ships creak and groan as they sail over rolling waves.</p>
+          <button class="btn btn-primary play-btn" data-sound="ship">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-lg h-100 text-center">
+        <img src="assets/images/tortoise.jpeg" class="card-img-top" alt="Tortoise">
+        <div class="card-body">
+          <h5 class="card-title">Tortoise</h5>
+          <p class="card-text">Sea turtles glide slowly and peacefully through warm ocean waters.</p>
+          <button class="btn btn-primary play-btn" data-sound="tortoise">Play</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 🦕 Legends of the Deep -->
+<section class="container my-5" id="extinct-animals">
+  <h2 class="text-center text-white mb-4">🦕 Legends of the Deep</h2>
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🦈 Megalodon -->
+    <div class="col-md-3">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="assets/images/megalodon.jpg" alt="Megalodon" class="img-fluid" />
+            <h5 class="mt-2">Megalodon</h5>
+          </div>
+          <div class="flip-card-back">
+            <p><strong>Era:</strong> 23 to 3.6 million years ago</p>
+            <p><strong>Fact:</strong> The largest shark ever — up to 60 feet long!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more extinct animals here using same structure -->
+
+    <!-- 🐋 Livyatan -->
+<div class="col-md-3">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="assets/images/livyatan.jpg" alt="Livyatan" class="img-fluid" />
+        <h5 class="mt-2">Livyatan</h5>
+      </div>
+      <div class="flip-card-back">
+        <p><strong>Era:</strong> 12 to 13 million years ago</p>
+        <p><strong>Fact:</strong> A massive whale with teeth like swords!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🐊 Dunkleosteus -->
+<div class="col-md-3">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="assets/images/dunkleosteus.jpg" alt="Dunkleosteus" class="img-fluid" />
+        <h5 class="mt-2">Dunkleosteus</h5>
+      </div>
+      <div class="flip-card-back">
+        <p><strong>Era:</strong> 358–382 million years ago</p>
+        <p><strong>Fact:</strong> Armored fish with a bite force stronger than T-Rex!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🐉 Ichthyosaurus -->
+<div class="col-md-3">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="assets/images/ichthyosaurus.jpg" alt="Ichthyosaurus" class="img-fluid" />
+        <h5 class="mt-2">Ichthyosaurus</h5>
+      </div>
+      <div class="flip-card-back">
+        <p><strong>Era:</strong> 200–250 million years ago</p>
+        <p><strong>Fact:</strong> Dolphin-like reptile that ruled Triassic seas!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🌀 Helicoprion -->
+<div class="col-md-3">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="assets/images/helicoprion.jpg" alt="Helicoprion" class="img-fluid" />
+        <h5 class="mt-2">Helicoprion</h5>
+      </div>
+      <div class="flip-card-back">
+        <p><strong>Era:</strong> 270 million years ago</p>
+        <p><strong>Fact:</strong> Shark-like fish with spiral saw-shaped teeth!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🐙 Pliosaurus -->
+<div class="col-md-3">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="assets/images/pliosaurus.jpg" alt="Pliosaurus" class="img-fluid" />
+        <h5 class="mt-2">Pliosaurus</h5>
+      </div>
+      <div class="flip-card-back">
+        <p><strong>Era:</strong> 150 million years ago</p>
+        <p><strong>Fact:</strong> Huge predator with powerful jaws — known as the “T-Rex of the Sea”!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- 🌐 Ocean Wonders & Mysteries -->
+<section class="container my-5" id="ocean-facts">
+  <h2 class="text-center text-white mb-4">🌐 Ocean Wonders & Mysteries</h2>
+  <div class="row g-4 justify-content-center">
+
+    <!-- 🌊 Mariana Trench -->
+    <div class="col-md-4">
+      <div class="fact-tile">
+        <h5>🌊 Mariana Trench</h5>
+        <p>The deepest natural trench in the world — plunging nearly 36,000 feet deep in the Pacific Ocean. It’s so deep that if Mount Everest were placed inside, its peak would still be underwater.</p>
+      </div>
+    </div>
+
+    <!-- 🌀 Bermuda Triangle -->
+    <div class="col-md-4">
+      <div class="fact-tile">
+        <h5>🌀 Bermuda Triangle</h5>
+        <p>This mysterious region between Florida, Bermuda, and Puerto Rico is infamous for unexplained disappearances of ships and aircraft. Many theories exist, but no concrete answers.</p>
+      </div>
+    </div>
+
+    <!-- 🔥 Underwater Volcanoes -->
+    <div class="col-md-4">
+      <div class="fact-tile">
+        <h5>🌋 Underwater Volcanoes</h5>
+        <p>Over 1 million underwater volcanoes exist! These “seamounts” shape ocean floors and can even create new islands when they erupt, like in Tonga or Iceland.</p>
+      </div>
+    </div>
+
+    <!-- ✨ Bioluminescent Bays -->
+    <div class="col-md-4">
+      <div class="fact-tile">
+        <h5>✨ Bioluminescent Bays</h5>
+        <p>Some coastal areas glow at night due to plankton that emit light when disturbed. Mosquito Bay in Puerto Rico is one of the brightest bioluminescent spots in the world.</p>
+      </div>
+    </div>
+
+    <!-- 🧜 Atlantis Myth -->
+    <div class="col-md-4">
+      <div class="fact-tile">
+        <h5>🏛️ The Lost City of Atlantis</h5>
+        <p>First described by Plato, Atlantis is a mythical underwater city said to be highly advanced and tragically sunk beneath the waves. Many explorers have searched for it, but none have proven it exists.</p>
+      </div>
+    </div>
+
+    <!-- 🎧 Sound Travels Faster -->
+    <div class="col-md-4">
+      <div class="fact-tile">
+        <h5>🎧 Ocean Acoustics</h5>
+        <p>Sound travels nearly 4 times faster in water than in air. That’s how whales can communicate across thousands of kilometers through low-frequency calls.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<script src="script.js"></script>
+
+  <div class="bubble-container">
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+    <div class="bubble bubble5"></div>
+  </div>
+
+  
+
+  <!-- 🌊 Footer -->
+<footer class="footer mt-5 py-4 text-center text-white">
+  <div class="container">
+    <p class="mb-1">🌐 Made with 💙 by Vrushali Jain</p>
+    <p class="mb-0 small">
+      © 2025 Ocean Sound Explorer | All Rights Reserved
+    </p>
+    <div class="social-icons mt-2">
+      <a href="#" class="me-3 text-white"><i class="bi bi-github"></i></a>
+      <a href="#" class="me-3 text-white"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:your.email@example.com" class="text-white"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
